@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Modular Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. HERO -->
+    <header class="header slide-in-left">
+        <h1>Transforme suas Ideias em Projetos Digitais</h1>
+        <p>Landing page modular, moderna e profissional pronta para qualquer cliente.</p>
+        <a href="#calculadora" class="btn">Testar Calculadora</a>
+    </header>
+
+    <!-- 2. SOBRE -->
+    <section class="sobre slide-in-right">
+        <h2>Sobre Nosso Modelo</h2>
+        <p>Design moderno, minimalista e tech clean com toque natural e leve. Fácil de adaptar para qualquer público ou nicho.</p>
+    </section>
+
+    <!-- 3. BENEFÍCIOS -->
+    <section class="beneficios slide-in-left">
+        <h2>Benefícios</h2>
+        <div class="cards">
+            <div class="card"><i class="fa-solid fa-rocket"></i><p>Rápido e responsivo</p></div>
+            <div class="card"><i class="fa-solid fa-paintbrush"></i><p>Design moderno e clean</p></div>
+            <div class="card"><i class="fa-solid fa-cogs"></i><p>Fácil de customizar</p></div>
+        </div>
+    </section>
+
+    <!-- 4. DEPOIMENTOS -->
+    <section class="depoimentos slide-in-right">
+        <h2>Depoimentos</h2>
+        <div class="slider" id="depoimentosSlider">
+            <div class="slide"><blockquote>"Excelente modelo, fácil de personalizar e profissional!" – Cliente X</blockquote></div>
+            <div class="slide"><blockquote>"A landing page aumentou nossos leads em 50%." – Cliente Y</blockquote></div>
+            <div class="slide"><blockquote>"Design moderno e atraente, nossos clientes adoraram." – Cliente Z</blockquote></div>
+        </div>
+    </section>
+
+    <!-- 5. PORTFÓLIO -->
+    <section class="portfolio slide-in-left">
+        <h2>Cases / Projetos</h2>
+        <div class="cards">
+            <div class="card"><img src="assets/project1.jpg" alt="Projeto 1"><p>Projeto 1</p></div>
+            <div class="card"><img src="assets/project2.jpg" alt="Projeto 2"><p>Projeto 2</p></div>
+            <div class="card"><img src="assets/project3.jpg" alt="Projeto 3"><p>Projeto 3</p></div>
+        </div>
+    </section>
+
+    <!-- 6. EQUIPE -->
+    <section class="equipe slide-in-right">
+        <h2>Nosso Time</h2>
+        <div class="cards">
+            <div class="card"><img src="assets/person1.jpg" alt="Membro 1"><p>Marcos</p></div>
+            <div class="card"><img src="assets/person2.jpg" alt="Membro 2"><p>Joana</p></div>
+            <div class="card"><img src="assets/person3.jpg" alt="Membro 3"><p>Lucas</p></div>
+        </div>
+    </section>
+
+    <!-- 7. CONTATO -->
+    <section class="contato slide-in-left">
+        <h2>Fale Conosco</h2>
+        <form id="contatoForm">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <textarea placeholder="Mensagem" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- 8. CALCULADORA (FINAL) -->
+    <section id="calculadora" class="calculadora slide-in-right">
+        <h2>Calculadora de Juros Compostos</h2>
+        <form id="calcForm">
+            <div class="input-group">
+                <label for="capital">Capital Inicial (R$)</label>
+                <input type="number" id="capital" placeholder="Ex: 1000" required>
+            </div>
+            <div class="input-group">
+                <label for="taxa">Taxa de Juros (% ao mês)</label>
+                <input type="number" id="taxa" placeholder="Ex: 5" required>
+            </div>
+            <div class="input-group">
+                <label for="tempo">Tempo (meses)</label>
+                <input type="number" id="tempo" placeholder="Ex: 12" required>
+            </div>
+            <button type="submit" class="btn">Calcular</button>
+        </form>
+        <div id="resultado" class="resultado"></div>
+    </section>
+
+    <!-- 9. RODAPÉ -->
+    <footer class="footer slide-in-left">
+        <p>Protótipo Modular Premium © 2025 | Desenvolvido por Marcolas</p>
+    </footer>
+
+    <!-- CHAT WHATSAPP -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
