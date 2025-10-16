@@ -27,18 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlider("depoimentosSlider");
   initSlider("portfolioSlider");
 
-  // calculadora
-  document.getElementById("btnCalcular").addEventListener("click", () => {
-    const valor = parseFloat(document.getElementById("valorPrincipal").value);
-    const taxa = parseFloat(document.getElementById("juros").value) / 100;
-    const periodo = parseInt(document.getElementById("periodo").value) || 0;
-    if (isNaN(valor) || isNaN(taxa)) { alert("Preencha os campos corretamente."); return; }
-    const montante = valor * Math.pow(1 + taxa, periodo);
-    const diff = montante - valor;
-    const res = document.getElementById("resultado");
-    res.innerHTML = `💰 Valor Final: <strong>R$ ${montante.toFixed(2)}</strong><br>📈 Diferença: <strong>R$ ${diff.toFixed(2)}</strong>`;
-  });
-
   // envio do formulário de contato via WhatsApp
   document.getElementById("contatoForm").addEventListener("submit", e => {
     e.preventDefault();
