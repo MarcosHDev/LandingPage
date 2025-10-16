@@ -1,66 +1,51 @@
-// ===== CALCULADORA DE JUROS =====
-document.getElementById("calcForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const capital = parseFloat(document.getElementById("capital").value);
-    const taxa = parseFloat(document.getElementById("taxa").value)/100;
-    const tempo = parseInt(document.getElementById("tempo").value);
+document.addEventListener("DOMContentLoaded", () => {
+  // ano automático
+  document.getElementById("ano").textContent = new Date().getFullYear();
 
-    if(isNaN(capital) || isNaN(taxa) || isNaN(tempo)) {
-        alert("Preencha todos os campos corretamente!");
-        return;
-    }
+  // menu mobile
+  const menuIcon = document.getElementById("menuIcon");
+  const navLinks = document.getElementById("navLinks");
+  menuIcon.addEventListener("click", () => navLinks.classList.toggle("active"));
 
-    const montante = capital * Math.pow(1 + taxa, tempo);
-    const juros = montante - capital;
-
-    document.getElementById("resultado").innerHTML = `
-        💰 Montante Final: <strong>R$ ${montante.toFixed(2)}</strong><br>
-        📈 Juros Ganhos: <strong>R$ ${juros.toFixed(2)}</strong>
-    `;
-});
-
-// ===== FORMULÁRIO DE CONTATO =====
-document.getElementById("contatoForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Mensagem enviada! ✅ Em breve entraremos em contato.");
-    this.reset();
-});
-
-// ===== ANIMAÇÕES SLIDE-IN AO SCROLL =====
-const slideElements = document.querySelectorAll('.slide-in-left, .slide-in-right');
-function checkSlide() {
-    const triggerBottom = window.innerHeight * 0.85;
-    slideElements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if(elementTop < triggerBottom) {
-            el.classList.add('active');
-        } else {
-            el.classList.remove('active');
-        }
+  // animações de entrada
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("active");
     });
-}
-window.addEventListener('scroll', checkSlide);
-window.addEventListener('load', checkSlide);
+  }, { threshold: 0.2 });
+  document.querySelectorAll(".slide-in").forEach(el => observer.observe(el));
 
-// ===== SLIDER AUTOMÁTICO DE DEPOIMENTOS =====
-let currentSlide = 0;
-const slides = document.querySelectorAll('#depoimentosSlider .slide');
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${100 * (i - index)}%)`;
-    });
-}
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-showSlide(currentSlide);
-setInterval(nextSlide, 5000);
+  // sliders (depoimentos e portfolio)
+  function initSlider(id) {
+    const slides = document.querySelectorAll(`#${id} .slide`);
+    if (!slides.length) return;
+    let i = 0;
+    const show = idx => slides.forEach((s, j) => s.style.transform = `translateX(${100 * (j - idx)}%)`);
+    show(i);
+    setInterval(() => { i = (i + 1) % slides.length; show(i); }, 4000);
+  }
+  initSlider("depoimentosSlider");
+  initSlider("portfolioSlider");
 
-// ===== CHAT WHATSAPP POPUP =====
-const whatsappChat = document.querySelector('.whatsapp-chat');
-whatsappChat.addEventListener('click', function(e){
+  // calculadora
+  document.getElementById("btnCalcular").addEventListener("click", () => {
+    const valor = parseFloat(document.getElementById("valorPrincipal").value);
+    const taxa = parseFloat(document.getElementById("juros").value) / 100;
+    const periodo = parseInt(document.getElementById("periodo").value) || 0;
+    if (isNaN(valor) || isNaN(taxa)) { alert("Preencha os campos corretamente."); return; }
+    const montante = valor * Math.pow(1 + taxa, periodo);
+    const diff = montante - valor;
+    const res = document.getElementById("resultado");
+    res.innerHTML = `💰 Valor Final: <strong>R$ ${montante.toFixed(2)}</strong><br>📈 Diferença: <strong>R$ ${diff.toFixed(2)}</strong>`;
+  });
+
+  // envio do formulário de contato via WhatsApp
+  document.getElementById("contatoForm").addEventListener("submit", e => {
     e.preventDefault();
-    alert("Você será redirecionado para o WhatsApp!");
-    window.open(this.href, "_blank");
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+    const texto = encodeURIComponent(`Olá! 👋\n\nNome: ${nome}\nE-mail: ${email}\nMensagem: ${mensagem}`);
+    window.open(`https://wa.me/5511999999999?text=${texto}`, "_blank");
+  });
 });

@@ -1,111 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Modular Premium</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estética Victória Caroline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HERO -->
-    <header class="header slide-in-left">
-        <h1>Transforme suas Ideias em Projetos Digitais</h1>
-        <p>Landing page modular, moderna e profissional pronta para qualquer cliente.</p>
-        <a href="#calculadora" class="btn">Testar Calculadora</a>
-    </header>
+  <header class="navbar">
+    <div class="logo"><span id="marcaNome">Estética Victória Caroline</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#calculadora">Simular</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button id="menuIcon" class="menu-icon">☰</button>
+  </header>
 
-    <!-- 2. SOBRE -->
-    <section class="sobre slide-in-right">
-        <h2>Sobre Nosso Modelo</h2>
-        <p>Design moderno, minimalista e tech clean com toque natural e leve. Fácil de adaptar para qualquer público ou nicho.</p>
-    </section>
-
-    <!-- 3. BENEFÍCIOS -->
-    <section class="beneficios slide-in-left">
-        <h2>Benefícios</h2>
-        <div class="cards">
-            <div class="card"><i class="fa-solid fa-rocket"></i><p>Rápido e responsivo</p></div>
-            <div class="card"><i class="fa-solid fa-paintbrush"></i><p>Design moderno e clean</p></div>
-            <div class="card"><i class="fa-solid fa-cogs"></i><p>Fácil de customizar</p></div>
-        </div>
-    </section>
-
-    <!-- 4. DEPOIMENTOS -->
-    <section class="depoimentos slide-in-right">
-        <h2>Depoimentos</h2>
-        <div class="slider" id="depoimentosSlider">
-            <div class="slide"><blockquote>"Excelente modelo, fácil de personalizar e profissional!" – Cliente X</blockquote></div>
-            <div class="slide"><blockquote>"A landing page aumentou nossos leads em 50%." – Cliente Y</blockquote></div>
-            <div class="slide"><blockquote>"Design moderno e atraente, nossos clientes adoraram." – Cliente Z</blockquote></div>
-        </div>
-    </section>
-
-    <!-- 5. PORTFÓLIO -->
-    <section class="portfolio slide-in-left">
-        <h2>Cases / Projetos</h2>
-        <div class="cards">
-            <div class="card"><img src="assets/project1.jpg" alt="Projeto 1"><p>Projeto 1</p></div>
-            <div class="card"><img src="assets/project2.jpg" alt="Projeto 2"><p>Projeto 2</p></div>
-            <div class="card"><img src="assets/project3.jpg" alt="Projeto 3"><p>Projeto 3</p></div>
-        </div>
-    </section>
-
-    <!-- 6. EQUIPE -->
-    <section class="equipe slide-in-right">
-        <h2>Nosso Time</h2>
-        <div class="cards">
-            <div class="card"><img src="assets/person1.jpg" alt="Membro 1"><p>Marcos</p></div>
-            <div class="card"><img src="assets/person2.jpg" alt="Membro 2"><p>Joana</p></div>
-            <div class="card"><img src="assets/person3.jpg" alt="Membro 3"><p>Lucas</p></div>
-        </div>
-    </section>
-
-    <!-- 7. CONTATO -->
-    <section class="contato slide-in-left">
-        <h2>Fale Conosco</h2>
-        <form id="contatoForm">
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu Email" required>
-            <textarea placeholder="Mensagem" required></textarea>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
-    </section>
-
-    <!-- 8. CALCULADORA (FINAL) -->
-    <section id="calculadora" class="calculadora slide-in-right">
-        <h2>Calculadora de Juros Compostos</h2>
-        <form id="calcForm">
-            <div class="input-group">
-                <label for="capital">Capital Inicial (R$)</label>
-                <input type="number" id="capital" placeholder="Ex: 1000" required>
-            </div>
-            <div class="input-group">
-                <label for="taxa">Taxa de Juros (% ao mês)</label>
-                <input type="number" id="taxa" placeholder="Ex: 5" required>
-            </div>
-            <div class="input-group">
-                <label for="tempo">Tempo (meses)</label>
-                <input type="number" id="tempo" placeholder="Ex: 12" required>
-            </div>
-            <button type="submit" class="btn">Calcular</button>
-        </form>
-        <div id="resultado" class="resultado"></div>
-    </section>
-
-    <!-- 9. RODAPÉ -->
-    <footer class="footer slide-in-left">
-        <p>Protótipo Modular Premium © 2025 | Desenvolvido por Marcolas</p>
-    </footer>
-
-    <!-- CHAT WHATSAPP -->
-    <div class="whatsapp-container">
-        <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-chat">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
+  <section id="hero" class="hero slide-in">
+    <div class="hero-inner">
+      <h1>Estética Victória Caroline</h1>
+      <p>Beleza que vem de dentro para fora.</p>
+      <a class="btn" href="#contato">Agende Agora</a>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="sobre" class="section slide-in">
+    <h2>Sobre Nós</h2>
+    <p>Estética Victoria Caroline é uma clínica voltada para o cuidado holístico da saúde e bem-estar, integrando terapias estéticas tradicionais com terapias complementares. O conceito da empresa é focado no tratamento de dentro para fora, ou seja, ao invés de abordar apenas os aspectos físicos e estéticos, busca entender e tratar as causas emocionais e mentais que afetam a saúde física e as condições estéticas dos pacientes.</p>
+  </section>
+
+  <section id="servicos" class="section slide-in">
+    <h2>Nossos Serviços</h2>
+    <div class="cards-container">
+      <div class="card service-card">
+        <img src="img/servicodetox.jpg.jpg" alt="Detox Power">
+        <img src="img/servicodetox2.jpg" alt="Detox Power">
+        <h3>Detox Power</h3>
+        <p>nenis</p>
+      </div>
+      <div class="card service-card">
+        <img src="img/limpezapele.jpg" alt="Limpeza de Pele Profunda">
+        <h3>Limpeza de Pele Profunda</h3>
+        <p>nenis.</p>
+      </div>
+      <div class="card service-card">
+        <img src="img/tapping1.jpg" alt="Tape Estético">
+        <img src="img/tapping2.jpg" alt="Tape Estético">
+        <h3>Tape Estético</h3>
+        <p>Beleza e cuidado até nos menores detalhes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section slide-in">
+    <h2>Portfólio</h2>
+    <div id="portfolioSlider" class="slider">
+      <div class="slide card">
+        <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5f0?auto=format&fit=crop&w=900&q=80" alt="">
+        <p>Antes & Depois — Rejuvenescimento Facial</p>
+      </div>
+      <div class="slide card">
+        <img src="https://images.unsplash.com/photo-1614728894747-a83421e2bcd9?auto=format&fit=crop&w=900&q=80" alt="">
+        <p>Antes & Depois — Limpeza de Pele Profunda</p>
+      </div>
+      <div class="slide card">
+        <img src="https://images.unsplash.com/photo-1614644147723-bb054e5e2d05?auto=format&fit=crop&w=900&q=80" alt="">
+        <p>Antes & Depois — Cuidados Corporais</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos" class="section slide-in">
+    <h2>Depoimentos</h2>
+    <div id="depoimentosSlider" class="slider">
+      <div class="slide card"><p>"Atendimento impecável! Me senti renovada."</p><strong>- Juliana</strong></div>
+      <div class="slide card"><p>"Ambiente acolhedor e resultados incríveis."</p><strong>- Mariana</strong></div>
+      <div class="slide card"><p>"Equipe atenciosa e profissional."</p><strong>- Camila</strong></div>
+    </div>
+  </section>
+
+  <section id="calculadora" class="section slide-in">
+    <h2>Simule Seu Pacote</h2>
+    <p>Veja o valor estimado do seu tratamento.</p>
+    <div class="calc-form card">
+      <input type="number" id="valorPrincipal" placeholder="Valor do pacote (R$)">
+      <input type="number" id="juros" placeholder="Desconto ou acréscimo (%)">
+      <input type="number" id="periodo" placeholder="Número de sessões">
+      <button id="btnCalcular" class="btn">Calcular</button>
+      <p id="resultado" class="resultado">Resultado: R$ 0,00</p>
+    </div>
+  </section>
+
+  <section id="contato" class="section contato slide-in">
+    <div class="contato-container">
+      <div class="contato-info">
+        <h2>Entre em Contato</h2>
+        <p>Agende seu horário ou tire dúvidas com nossa equipe.</p>
+        <ul>
+          <li>📧 contato@belezaestilo.com</li>
+          <li>📞 (11) 99999-9999</li>
+          <li>📍 São Paulo - SP</li>
+        </ul>
+        <a class="btn" href="https://wa.me/5511999999999" target="_blank">💬 WhatsApp</a>
+      </div>
+
+      <form id="contatoForm" class="contato-form">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="mensagem" rows="4" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="ano"></span> Estética Victória Caroline — Todos os direitos reservados.</p>
+  </footer>
+
+  <a class="whatsapp-chat" href="https://wa.me/5511999999999" target="_blank">💬</a>
+  <script src="script.js"></script>
 </body>
 </html>
