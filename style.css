@@ -32,13 +32,13 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(222, 208, 234, 0.8);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 20px 30px;
   z-index: 999;
   transition: 0.3s;
 }
@@ -200,35 +200,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-}
-
-/* ===== CALCULADORA ===== */
-.calc-form {
-  background: var(--white);
-  box-shadow: 0 8px 22px var(--shadow);
-  border-radius: 16px;
-  padding: 30px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.calc-form input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.calc-form .btn {
-  width: 100%;
-}
-
-.resultado {
-  margin-top: 15px;
-  font-weight: 600;
-  color: var(--lilac-deep);
 }
 
 /* ===== CONTATO ===== */
