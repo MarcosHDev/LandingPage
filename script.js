@@ -15,25 +15,45 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.2 });
   document.querySelectorAll(".slide-in").forEach(el => observer.observe(el));
 
-  // sliders (depoimentos e portfolio)
-  function initSlider(id) {
+  // ===== SLIDERS COM FADE SUAVE =====
+  function initFadeSlider(id) {
     const slides = document.querySelectorAll(`#${id} .slide`);
     if (!slides.length) return;
-    let i = 0;
-    const show = idx => slides.forEach((s, j) => s.style.transform = `translateX(${100 * (j - idx)}%)`);
-    show(i);
-    setInterval(() => { i = (i + 1) % slides.length; show(i); }, 4000);
-  }
-  initSlider("depoimentosSlider");
-  initSlider("portfolioSlider");
 
-  // envio do formulário de contato via WhatsApp
+    let current = 0;
+
+    // Define estilo base para fade
+    slides.forEach((s, i) => {
+      s.style.position = "absolute";
+      s.style.top = 0;
+      s.style.left = 0;
+      s.style.width = "100%";
+      s.style.transition = "opacity 1.2s ease-in-out";
+      s.style.opacity = i === 0 ? 1 : 0;
+    });
+
+    // Troca automática de slides
+    setInterval(() => {
+      slides[current].style.opacity = 0;
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = 1;
+    }, 4000);
+  }
+
+  // aplica aos dois sliders
+  initFadeSlider("portfolioSlider");
+  initFadeSlider("depoimentosSlider");
+
+  // ===== FORMULÁRIO DE CONTATO VIA WHATSAPP =====
   document.getElementById("contatoForm").addEventListener("submit", e => {
     e.preventDefault();
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const mensagem = document.getElementById("mensagem").value;
-    const texto = encodeURIComponent(`Olá! 👋\n\nNome: ${nome}\nE-mail: ${email}\nMensagem: ${mensagem}`);
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    const texto = encodeURIComponent(
+      `Olá! 👋\n\nNome: ${nome}\nE-mail: ${email}\nMensagem: ${mensagem}`
+    );
     window.open(`https://wa.me/5511999999999?text=${texto}`, "_blank");
   });
 });
